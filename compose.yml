@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  olcrtc-server:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    container_name: olcrtc-server
+    restart: unless-stopped
+
+    ports:
+      - "8443:8443"
+
+    env_file:
+      - .env

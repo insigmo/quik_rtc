@@ -1,0 +1,17 @@
+ROOM_ID=$(openssl rand -hex 6)        # 12 hex символов
+CLIENT_ID=$(openssl rand -hex 6)
+ENCRYPTION_KEY=$(openssl rand -hex 16) # 32 hex символа
+
+cat > .env <<EOF
+ROOM_ID=${ROOM_ID}
+CLIENT_ID=${CLIENT_ID}
+ENCRYPTION_KEY=${ENCRYPTION_KEY}
+
+# Остальные настройки под olcrtc:
+CARRIER=jitsi
+TRANSPORT=datachannel
+LISTEN_ADDR=:8443
+EOF
+
+echo ".env сгенерирован:"
+cat .env
