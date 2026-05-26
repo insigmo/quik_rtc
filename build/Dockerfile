@@ -13,7 +13,7 @@ RUN git clone --depth=1 https://github.com/openlibrecommunity/olcrtc . && \
 RUN go build -o /out/olcrtc-server ./cmd/srv
 
 # ===== STAGE 2: runtime =====
-FROM debian:stable-slim
+FROM debian:trixie-slim
 
 ENV TZ=Etc/UTC \
     DEBIAN_FRONTEND=noninteractive
