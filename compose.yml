@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   olcrtc-server:
     build:
@@ -7,9 +5,9 @@ services:
       dockerfile: build/Dockerfile
     container_name: olcrtc-server
     restart: unless-stopped
-
     ports:
-      - "8443:8443"
-
-    env_file:
-      - .env
+      - "8998:8998"
+    volumes:
+      - ./server.yaml:/app/server.yaml:ro
+      - ./data:/app/data
+    command: ["/app/olcrtc-server", "/app/server.yaml"]
