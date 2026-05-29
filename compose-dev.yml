@@ -1,6 +1,8 @@
 services:
   olcrtc-server:
-    image: insigmo/olcrtc_server:0.1
+    build:
+      context: .
+      dockerfile: build/Dockerfile
     container_name: olcrtc-server
     restart: unless-stopped
     ports:
