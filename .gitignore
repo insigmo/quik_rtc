@@ -30,3 +30,7 @@ go.work.sum
 # Editor/IDE
 .idea/
 .vscode/
+client.yaml
+server.yaml
+project_dump.txt
+project_dumper.py
